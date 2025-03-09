@@ -1,0 +1,519 @@
+:root{
+    --var-primary: #e8651b;
+    --var-secondary: #33952e;
+    --var-black: #26342c;
+}
+body{
+    font-family: "Inter", sans-serif !important;
+}
+header{
+    z-index: 105;
+    position: relative;
+}
+.title-site h2{
+    color: var(--var-primary)  
+}
+/* Icono de lupa */
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    margin-left: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.search-icon:hover {
+    color: #007bff;
+}
+
+/* Fondo oscuro cuando se activa la búsqueda */
+.search-overlay {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.4s ease-in-out;
+    z-index: 999;
+}
+
+/* Estilos del contenedor de búsqueda */
+.search-container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.search-container input {
+    width: 90%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.search-container button {
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #0056b3;
+}
+
+/* Botón para cerrar el buscador */
+.close-search {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-search:hover {
+    color: #ccc;
+}
+
+/* Mostrar la búsqueda cuando se active */
+.search-overlay.active {
+    top: 0;
+}
+
+/* Estilos iniciales */
+.navbar-custom {
+    transition: all 0.3s ease-in-out;
+    position: absolute !important;
+    right: 0;
+    left: 0;
+}
+.navbar-custom a, .navbar-custom .fa-search:before{
+    color: white;
+}
+/* Estilos cuando el usuario hace scroll */
+.navbar-custom.scrolled {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: solid 1px var(--var-secondary);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    animation: slideDown 0.3s forwards;
+    z-index: 1000;
+}
+.navbar-custom.scrolled a, .navbar-custom.scrolled .fa-search:before{
+    color: black;
+}
+.navbar-custom.scrolled .no-scrolled, .navbar-custom .scrolled{
+    display: none;
+}
+.navbar-custom.scrolled .scrolled{
+    display: inherit;
+}
+
+/* Animación de bajada */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Estilo del logo */
+.navbar-brand img {
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Tamaño normal */
+    max-width: 200px;
+}
+
+.scrolled .navbar-brand img {
+    max-width: 150px; /* Tamaño reducido */
+}
+.slider-principal{
+    padding: 50px 0;
+}
+.slider-principal .swiper {
+    width: 100%;
+    height: auto;
+}
+.bg-cover{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide-box{
+    position: relative;
+    margin-bottom: 150px;    
+}
+.slide-box .pill-2{
+    width: 100%;
+    max-width: 50%;
+    height: 250px;
+    border-radius: 150px;
+    position: absolute;
+    right: 0;
+    top: 80px;    
+}
+.slide-box .pill-1{
+    height: 250px;
+    border-radius: 150px;
+    width: 100%;
+    max-width: 70%;
+    background: var(--var-primary);
+    padding: 30px 60px;
+    align-content: center;
+    text-align: left;
+    color: white;
+    font-size: 24px;
+    position: relative;
+}
+.slide-box .pill-1 p{
+    width: 100%;
+    max-width: 70%;
+}
+.slider-principal .swiper-pagination-bullet{
+    background: #26342c;
+    opacity: 1;
+    height: 15px;
+    width: 15px;    
+}
+.slider-principal .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #e8651b;
+    height: 20px;
+    width: 20px;
+}
+.slider-principal .swiper-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.gradient-ball {
+    position: relative;
+    overflow: hidden;
+}
+
+/* .gradient-ball:before {
+    background: linear-gradient(350deg, rgb(148 198 253 / 60%) 12.52%, rgb(160 189 251 / 60%) 59.34%);
+    content: "";
+    display: flex;
+    filter: blur(100px);
+    height: 100%;
+    left: -30%;
+    position: absolute;
+    top: 122px;
+    transform: rotate(-4.16deg);
+    width: 100%;
+    will-change: transform;
+    z-index: 1;
+}     */
+
+.sect2-img{
+    width: 115%;
+}
+.circle {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    max-width: 300px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.counter, .number{
+    display: inline-block;
+    font-size: 90px;
+    font-weight: bold;
+}
+.numeros-sect {
+    position: absolute;
+    bottom: -105px;
+    right: 0;
+    left: 0;
+    z-index: 101;
+}
+.box-text{
+    font-size: 32px;
+    color: white;
+}
+.box-text p{
+    max-width: 90%;        
+    font-weight: 100;
+}
+.quienes-somos{
+    background-color: #eaeaea;
+    padding: 170px 0 300px;   
+    position: relative;
+}
+.banner-sect2{
+    position: relative;
+}
+.banner {
+    position: relative; /* Asegúrate de que el banner tenga un contexto de posición */
+    background: #000; /* Fondo oscuro o lo que prefieras */
+    color: white; /* Color del texto */
+    padding: 100px 0;
+}
+
+.particles-js-canvas-el {
+    width: 100% !important;
+    height: 60vh !important;
+    /* min-height: 800px; */
+} 
+.logo-footer{
+    width: 100%;
+    max-width: 250px;
+}
+/* ---- reset ---- */ 
+canvas{ 
+    display: block; 
+    vertical-align: bottom; } 
+/* ---- particles.js container ---- */ 
+#particles-js{ 
+    position: relative;
+    z-index: 50;
+    width: 100%; 
+    height: 60vh; 
+    background-color: var(--var-primary); 
+    /* background-image: url("https://javieracast.github.io/tier1//wp-content/uploads/2025/03/09-2-scaled.jpg");  */
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: 50% 50%; 
+    background: rgb(75,32,8);
+    background: linear-gradient(180deg, rgba(75,32,8,1) 0%, rgba(142,66,23,1) 0%, rgba(232,101,27,1) 37%);  
+} 
+/* ---- stats.js ---- */ 
+.count-particles{ 
+    background: #000022; 
+    position: absolute; 
+    top: 48px; 
+    left: 0; 
+    width: 80px; 
+    color: #13E8E9; 
+    font-size: .8em; 
+    text-align: left; 
+    text-indent: 4px; 
+    line-height: 14px; 
+    padding-bottom: 2px; 
+    font-family: Helvetica, Arial, sans-serif; 
+    font-weight: bold; 
+} 
+.js-count-particles{ 
+    font-size: 1.1em; 
+} 
+#stats, .count-particles{ 
+    -webkit-user-select: none; 
+    margin-top: 5px; 
+    margin-left: 5px; 
+} 
+#stats{ 
+    border-radius: 3px 3px 0 0; 
+    overflow: hidden; 
+} 
+.count-particles{ 
+    border-radius: 0 0 3px 3px; 
+}
+.banner-title{
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    color: #fff;
+    margin: 0;
+    z-index: 10;
+    right: 0;   
+}
+.banner-title h1{
+    font-size: 70px;    
+}
+
+/* footer{
+    background-color: #071020;
+    padding: 50px 0;    
+} */
+footer span, footer a{
+    color: var(--var-black);
+    text-decoration: none;
+    font-size: 14px;
+}
+.box-members {
+    background-color: white;
+    position: relative;
+    padding: 15px 25px;
+    text-align: center;
+    border-radius: 10px;
+}
+.img-member {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    top: 0;
+    border-radius: 100%;
+    margin-bottom: 25px;
+    background: var(--var-primary);
+    max-width: 150px;
+}
+.desc-member h4{
+    color: var(--var-primary);
+    font-weight: bold;
+}
+.slide-member{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -150px;    
+}
+.nuestros-servicios{
+    padding: 200px 0 50px;
+    color: white;
+}
+.box-servicio{
+    color: white;
+}
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front h3{
+    margin: 15px 0;
+}
+.flip-card-inner img{
+    width: 100%;
+    max-width: 60px;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: black;
+}
+
+.flip-card-front {
+    background: white;
+    text-align: center;
+}
+
+.flip-card-back {
+    background: var(--var-primary);
+    color: white;
+    transform: rotateY(180deg);
+}
+.flip-card-back .logo{
+    margin: 15px 0;
+}
+.contact-form{
+    background: #1e2531;
+    padding: 100px;    
+    color: white;
+}
+.contact-form input, .contact-form select{
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+}
+.contact-form .wpcf7-submit{
+    display: inline-block;
+    background: var(--var-primary);
+    border-radius: 100px;
+    width: auto;
+    padding: 10px 100px;
+    border: solid 1px var(--var-primary);    
+}
+.contact-form input::placeholder {
+    color: white;
+}
+.contact-form .wpcf7-spinner{
+    display: block !important;
+    margin: 0 0 0 auto !important;
+}
+@media screen and (min-width: 1024px) {
+    /* .gradient-ball:before {
+        animation: gradient-animation 80s ease-in-out .2s infinite;
+        background: linear-gradient(350deg, rgb(148 198 253 / 60%) 12.52%, rgb(160 189 251 / 60%) 59.34%);
+        border-radius: 50%;
+        filter: blur(100px);
+        height: 987px;
+        left: 0;
+        max-width: 1986px;
+        opacity: 1;
+        top: 0;
+        transform: rotate(0deg) scale(1) translateZ(0) translateY(-35%) translateX(-10%) skew(0deg);
+        width: 1200px;
+    } */
+    
+}
+
+@keyframes gradient-animation {
+    0%, to {
+        transform: rotate(0deg) scale(1) translateZ(0) translateY(-35%) translateX(-10%);
+    }
+
+    18.66% {
+        transform: rotate(-5deg) translateZ(0) translateY(5%) translateX(140%) scale(1.1) skew(10deg);
+    }
+
+    33.32% {
+        transform: rotate(5deg) translateZ(0) translateY(10%) translateX(-20%) scale(1) skew(-10deg);
+    }
+
+    49.98% {
+        transform: rotate(5deg) translateZ(0) translateY(-60%) translateX(40%) scale(1) skew(15deg);
+    }
+
+    66.64% {
+        transform: rotate(-5deg) translateZ(0) translateY(20%) translateX(125%) scale(1);
+    }
+
+    83.30% {
+        transform: rotate(0) translateZ(0) translateY(10%) translateX(-50%) scale(1.3);
+    }
+}
+
