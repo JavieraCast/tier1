@@ -4,16 +4,10 @@ const swiper1 = new Swiper('.swiper-1', {
   
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination-1',
       clickable: true,
     },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
+   
     autoplay: {
       delay: 3000,
     },

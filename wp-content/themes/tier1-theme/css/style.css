@@ -145,17 +145,17 @@ header{
 .scrolled .navbar-brand img {
     max-width: 150px; /* Tamaño reducido */
 }
-.slider-principal{
+/* .slider-principal{
     padding: 50px 0;
-}
+} */
 .slider-principal .swiper {
     width: 100%;
     height: auto;
 }
 .bg-cover{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
 .slide-box{
     position: relative;
@@ -187,6 +187,13 @@ header{
     width: 100%;
     max-width: 70%;
 }
+.swiper-pagination, .swiper-pagination-1 {
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+}
 .slider-principal .swiper-pagination-bullet{
     background: #26342c;
     opacity: 1;
@@ -199,7 +206,7 @@ header{
     height: 20px;
     width: 20px;
 }
-.slider-principal .swiper-pagination{
+.slider-principal .swiper-pagination, .slider-principal .swiper-pagination-1{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,6 +247,7 @@ header{
     padding: 25px;
     text-align: center;
     max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .title {
     font-size: 20px;
@@ -340,7 +348,7 @@ canvas{
 }
 .banner-title{
     position: absolute;
-    bottom: 200px;
+    bottom: 40%;
     left: 0;
     color: #fff;
     margin: 0;
@@ -348,7 +356,7 @@ canvas{
     right: 0;   
 }
 .banner-title h1{
-    font-size: 70px;    
+    font-size: 50px;    
 }
 
 /* footer{
@@ -356,7 +364,7 @@ canvas{
     padding: 50px 0;    
 } */
 footer span, footer a{
-    color: var(--var-black);
+    color: white !important;
     text-decoration: none;
     font-size: 14px;
 }
@@ -366,6 +374,7 @@ footer span, footer a{
     padding: 15px 25px;
     text-align: center;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .img-member {
     width: 100%;
@@ -385,11 +394,18 @@ footer span, footer a{
     position: absolute;
     right: 0;
     left: 0;
-    bottom: -150px;    
+    bottom: -200px;    
+    z-index: 3;
 }
-.nuestros-servicios{
+.slide-member .swiper-wrapper{
+    padding:50px 0;
+}
+.nuestros-servicios {
     padding: 200px 0 50px;
-    color: white;
+    color: black;
+    background-color: #f9f9f9;
+    position: relative;
+    z-index: 2;
 }
 .box-servicio{
     color: white;
@@ -414,6 +430,7 @@ footer span, footer a{
 }
 .flip-card-front h3{
     margin: 15px 0;
+    color: var(--var-primary);
 }
 .flip-card-inner img{
     width: 100%;
@@ -451,6 +468,8 @@ footer span, footer a{
     background: #1e2531;
     padding: 100px;    
     color: white;
+    position: relative;
+    z-index: 3;    
 }
 .contact-form input, .contact-form select{
     width: 100%;
@@ -474,6 +493,35 @@ footer span, footer a{
     display: block !important;
     margin: 0 0 0 auto !important;
 }
+
+.trama-1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    text-align: right;
+    top: 0;
+    left: 0;
+}
+.trama-2{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;    
+}
+.trama-1 img {
+    width: 100%;
+    max-width: 100%;
+    filter: opacity(0.3);
+    transform: rotatez(180deg);
+}
+.trama-2 img{
+    width: 100%;   
+    filter: opacity(0.3); 
+}
+
 @media screen and (min-width: 1024px) {
     /* .gradient-ball:before {
         animation: gradient-animation 80s ease-in-out .2s infinite;
